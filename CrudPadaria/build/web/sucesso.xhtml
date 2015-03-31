@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:outputLabel value="Produto adicionado com sucesso"/><br/>
+        <h:form>
+            <ui:repeat var="o" value="#{beanPadaria.produtos}" varStatus="status">
+                <tr style="border: 1px black solid">
+                    <td>#{beanPadaria.produtos[status.index]}<br/></td>
+                </tr>
+            </ui:repeat>
+            <h:commandButton value="Adicionar" action="adicionar"/>
+            <h:commandButton value="Editar" action="editar"/>
+            <h:commandButton value="Sair" action="account"/>
+        </h:form>
+    </h:body>
+</html>
+
