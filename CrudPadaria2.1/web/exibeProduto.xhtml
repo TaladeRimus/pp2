@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Exibe Produtos</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:dataTable value="#{comandosProdutos.produtos}" var="produto" border="1">
+                <f:facet name="cabecalho">
+                    <h:outputText value="Produtos" />
+                </f:facet>
+                 <h:column>
+                    <f:facet name="cabecalho">
+                        <h:outputText value="Nome: " />
+                    </f:facet>
+                     <h:outputText value="#{produto.nome}" />
+                </h:column>       
+                 <h:column>
+                    <f:facet name="cabecalho">
+                        <h:outputText value="Preço" />
+                    </f:facet>
+                    <h:outputText value="#{produto.preco}" />
+                </h:column>       
+                <h:column>
+                    <f:facet name="cabecalho">
+                        <h:outputText value="Quantidade" />
+                    </f:facet>
+                    <h:outputText value="#{produto.quantidade}" />
+                </h:column>
+                <h:column>
+                    <f:facet name="cabecalho">
+                        <h:outputText value="Editar" />
+                    </f:facet>
+                    <h:commandLink action="#{comandosProdutos.editarProduto}" value="Editar" >
+                        <f:setPropertyActionListener target="#{comandosProdutos.produtoSelecionado}" value="#{produto}" />
+                    </h:commandLink>
+                </h:column>            
+                <h:column>
+                    <f:facet name="cabecalho">
+                        <h:outputText value="Remover" />
+                    </f:facet>
+                    <h:commandLink action="#{comandosProdutos.removerProduto}" value="Remover" >
+                        <f:setPropertyActionListener target="#{comandosProdutos.produtoSelecionado}" value="#{produto}" />
+                    </h:commandLink>
+                </h:column>
+            </h:dataTable>
+            <h:commandLink value="Novo Produto" action="#{comandosProdutos.novoProduto()}"/>
+        </h:form>
+    </h:body>
+</html>
+

@@ -46,7 +46,7 @@ public class ComandosProdutos {
             this.produto.add(this.produtoSelecionado);
             this.produtoSelecionado = new Produtos();
         }
-        return ("exibeConteudo");
+        return ("exibeProduto");
     }
 
     public void removerProduto() {        
@@ -57,12 +57,12 @@ public class ComandosProdutos {
     public String novoProduto() {
         this.produtoSelecionado = new Produtos();
         editar = false;
-        return ("cadastro");
+        return ("cadastroProduto");
     }
 
     public String editarProduto() {
         editar = true;
-        return ("cadastro");
+        return ("cadastroProduto");
     }
 
     public Produtos getProdutoSelecionado() {
