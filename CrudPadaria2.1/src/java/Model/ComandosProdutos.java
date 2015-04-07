@@ -37,16 +37,16 @@ public class ComandosProdutos {
     
      public String adicionaProduto() {
         if (editar) {
-            for (Produtos produto : produto) {
-                if (produto.getId() == produtoSelecionado.getId()) {
-                    produto = produtoSelecionado;
+            for (Produtos prod : produto) {
+                if (prod.getId() == produtoSelecionado.getId()) {
+                    prod = produtoSelecionado;
                 }
             }
         } else {
             this.produto.add(this.produtoSelecionado);
             this.produtoSelecionado = new Produtos();
         }
-        return ("Planilha");
+        return ("exibeConteudo");
     }
 
     public void removerProduto() {        
@@ -57,12 +57,12 @@ public class ComandosProdutos {
     public String novoProduto() {
         this.produtoSelecionado = new Produtos();
         editar = false;
-        return ("Planilha");
+        return ("cadastro");
     }
 
-    public String editarUProduto() {
+    public String editarProduto() {
         editar = true;
-        return ("Planilha");
+        return ("cadastro");
     }
 
     public Produtos getProdutoSelecionado() {
