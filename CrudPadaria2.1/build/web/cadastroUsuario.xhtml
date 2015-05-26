@@ -10,14 +10,14 @@
         <h:form>
             <h:panelGrid columns="2">
                 <h:outputLabel value="Nome: "/>
-                <h:inputText value="#{comandosUsuario.usuarioSelecionado.nome}"/>
+                <h:inputText value="#{usuarioMB.usuarioSelecionado.nome}"/>
                 <h:outputLabel value="Login: "/>
-                <h:inputText value="#{comandosUsuario.usuarioSelecionado.login}"/>
+                <h:inputText value="#{usuarioMB.usuarioSelecionado.login}"/>
                 <h:outputLabel value="Senha: "/>
-                <h:inputSecret value="#{comandosUsuario.usuarioSelecionado.senha}"/>
+                <h:inputSecret value="#{usuarioMB.usuarioSelecionado.senha}"/>
                 <h:outputLabel value="Permissão: "/>
-                <h:inputText value="#{comandosUsuario.usuarioSelecionado.permissao}"/>
-                <h:commandButton value="Cadastrar" action="#{comandosUsuario.adicionaUsuario}"/>
+                <h:inputText value="#{usuarioMB.usuarioSelecionado.permissao}"/>
+                <h:commandButton value="Cadastrar" action="#{usuarioMB.cadastrar()}"/>
                 <h:commandButton value="Exibir" action="exibeUsuarios.xhtml"/>
             </h:panelGrid>
         </h:form>

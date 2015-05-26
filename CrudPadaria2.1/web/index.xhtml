@@ -14,8 +14,8 @@
                 <h:inputSecret/>
                 <h:commandButton value="Entrar" />
             </h:panelGrid>
-        <h:commandButton value="Cadastrar Produto" action="cadastroProduto" />
-        <h:commandButton value="Cadastrar Usuario" action="cadastroUsuario" />
+            <h:commandButton value="Cadastrar Produto" action="#{produtoMB.prepararCadastro}" />
+            <h:commandButton value="Cadastrar Usuario" action="#{usuarioMB.prepararCadastro}" />
         </h:form>
     </h:body>
 </html>

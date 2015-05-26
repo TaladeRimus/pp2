@@ -10,5 +10,5 @@
         <property name="URL" value="jdbc:postgresql://localhost:5432/Padaria"/>
         <property name="driverClass" value="org.postgresql.Driver"/>
     </jdbc-connection-pool>
-    <jdbc-resource enabled="true" jndi-name="Padaria" object-type="user" pool-name="post-gre-sql_Padaria_postgresPool"/>
+    <jdbc-resource enabled="true" jndi-name="PadariaJNDI" object-type="user" pool-name="post-gre-sql_Padaria_postgresPool"/>
 </resources>

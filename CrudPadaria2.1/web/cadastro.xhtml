@@ -10,12 +10,12 @@
         <h:form>
             <h:panelGrid columns="2">
                 <h:outputLabel value="Nome: "/>
-                <h:inputText value="#{comandosProdutos.produtoSelecionado.nome}"/>
+                <h:inputText value="#{produtoMB.produtoSelecionado.nome}"/>
                 <h:outputLabel value="Preço: "/>
-                <h:inputText value="#{comandosProdutos.produtoSelecionado.preco}"/>
+                <h:inputText value="#{produtoMB.produtoSelecionado.preco}"/>
                 <h:outputLabel value="Quantidade: "/>
-                <h:inputText value="#{comandosProdutos.produtoSelecionado.quantidade}"/>
-                <h:commandButton value="Cadastrar" action="#{comandosProdutos.adicionaProduto}"/>
+                <h:inputText value="#{produtoMB.produtoSelecionado.quantidade}"/>
+                <h:commandButton value="Cadastrar" action="#{produtoMB.cadastrar()}"/>
                 <h:commandButton value="Exibir" action="exibeConteudo.xhtml"/>
             </h:panelGrid>
         </h:form>

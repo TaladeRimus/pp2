@@ -8,7 +8,7 @@
     </h:head>
     <h:body>
         <h:form>
-            <h:dataTable value="#{comandosUsuario.usuario}" var="usuario" border="1">
+            <h:dataTable value="#{usuarioMB.usuarios}" var="usuario" border="1">
                 <f:facet name="cabecalho">
                     <h:outputText value="Produtos" />
                 </f:facet>
@@ -34,20 +34,20 @@
                     <f:facet name="cabecalho">
                         <h:outputText value="Editar" />
                     </f:facet>
-                    <h:commandLink action="#{comandosUsuario.editarUsuario}" value="Editar" >
-                        <f:setPropertyActionListener target="#{comandosUsuario.usuarioSelecionado}" value="#{usuario}" />
+                    <h:commandLink action="#{usuarioMB.editar()}" value="Editar" >
+                        <f:setPropertyActionListener target="#{usuarioMB.usuarioSelecionado}" value="#{usuario}" />
                     </h:commandLink>
                 </h:column>            
                 <h:column>
                     <f:facet name="cabecalho">
                         <h:outputText value="Remover" />
                     </f:facet>
-                    <h:commandLink action="#{comandosUsuario.removerUsuario}" value="Remover" >
-                        <f:setPropertyActionListener target="#{comandosUsuario.usuarioSelecionado}" value="#{usuario}" />
+                    <h:commandLink action="#{usuarioMB.remover()}" value="Remover" >
+                        <f:setPropertyActionListener target="#{usuarioMB.usuarioSelecionado}" value="#{usuario}" />
                     </h:commandLink>
                 </h:column>
             </h:dataTable>
-            <h:commandLink value="Novo Usuario" action="#{comandosUsuario.novoUsuario()}"/>
+            <h:commandLink value="Novo Usuario" action="#{usuarioMB.cadastrar()}"/>
         </h:form>
     </h:body>
 </html>
