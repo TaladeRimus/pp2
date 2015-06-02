@@ -5,19 +5,22 @@
  */
 package Model;
 
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
+
+import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
 /**
  *
  * @author Guilherme
  */
-@ManagedBean
-@SessionScoped
-public class Produtos{
+@Entity
+public class Produtos implements Serializable{
     public static int AUTOINCREMENT = 0;
     private String nome;
-    private int quantidade, id;
+    @Id
+    private int id;
+    private int quantidade;
     private double preco;
     
     public Produtos(){

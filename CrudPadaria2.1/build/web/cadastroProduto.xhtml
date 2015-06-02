@@ -15,8 +15,11 @@
                 <h:inputText id="idPreco" value="#{produtoMB.produtoSelecionado.preco}"/>
                 <h:outputLabel for="idQuantidade" value="Quantidade: "/>
                 <h:inputText id="idQuantidade" value="#{produtoMB.produtoSelecionado.quantidade}"/>
+            </h:panelGrid>
+            <h:panelGrid columns="3">
                 <h:commandButton value="Cadastrar" action="#{produtoMB.cadastrar()}"/>
                 <h:commandButton value="Exibir" action="exibeProduto.xhtml"/>
+                <h:commandButton value="Voltar" action="index.xhtml"/>
             </h:panelGrid>
         </h:form>
     </h:body>

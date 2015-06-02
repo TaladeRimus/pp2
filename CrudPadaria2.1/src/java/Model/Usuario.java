@@ -5,21 +5,21 @@
  */
 package Model;
 
-import java.util.ArrayList;
-import java.util.List;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
+import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
 /**
  *
  * @author Guilherme
  */
-@ManagedBean
-@SessionScoped
-public class Usuario {
+@Entity
+public class Usuario implements Serializable {
     
     private String nome, login, senha;
-    private int id, AUTOINCREMENT, permissao;
+    @Id
+    private int id;
+    private int AUTOINCREMENT, permissao;
     
     public Usuario() {
         id = ++AUTOINCREMENT;
@@ -63,6 +63,14 @@ public class Usuario {
 
     public void setSenha(String senha) {
         this.senha = senha;
+    }
+
+    public int getAUTOINCREMENT() {
+        return AUTOINCREMENT;
+    }
+
+    public void setAUTOINCREMENT(int AUTOINCREMENT) {
+        this.AUTOINCREMENT = AUTOINCREMENT;
     }
     
     

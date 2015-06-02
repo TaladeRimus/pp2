@@ -17,8 +17,11 @@
                 <h:inputSecret value="#{usuarioMB.usuarioSelecionado.senha}"/>
                 <h:outputLabel value="Permissão: "/>
                 <h:inputText value="#{usuarioMB.usuarioSelecionado.permissao}"/>
+            </h:panelGrid>
+            <h:panelGrid columns="3">
                 <h:commandButton value="Cadastrar" action="#{usuarioMB.cadastrar()}"/>
                 <h:commandButton value="Exibir" action="exibeUsuarios.xhtml"/>
+                <h:commandButton value="Voltar" action="index.xhtml"/>
             </h:panelGrid>
         </h:form>
     </h:body>
