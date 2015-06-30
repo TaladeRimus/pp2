@@ -47,6 +47,7 @@ public class ComandosVenda {
         } else {
             this.venda.add(this.vendaSelecionado);
             this.vendaSelecionado = new Venda();
+            atualizaEstoque(vendaSelecionado.idProduto, vendaSelecionado.quantidade);
         }
         return ("exibeVendas");
     }
@@ -74,5 +75,8 @@ public class ComandosVenda {
         this.vendaSelecionado = vendaSelecionado;
     }
     
-
+    public void atualizaEstoque(int idProduto,int quantidade){
+        vendaSelecionado.quantidade = quantidade;   
+        vendaSelecionado.idProduto = idProduto;
+    }
 }

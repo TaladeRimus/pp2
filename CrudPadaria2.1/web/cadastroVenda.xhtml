@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
     <h:head>
         <title>Cadastro de Vendas</title>
     </h:head>
@@ -16,7 +16,8 @@
                 <h:inputText value="#{vendaMB.vendaSelecionado.quantidade}"/>
             </h:panelGrid>
             <h:panelGrid columns="3">
-                <h:commandButton value="Cadastrar" action="#{vendaMB.cadastrar()}"/>
+                
+                <h:commandButton value="Cadastrar" action="#{vendaMB.removeDoEstoque(vendaMB.vendaSelecionado.idProduto, vendaMB.vendaSelecionado.quantidade)}"/>
                 <h:commandButton value="Exibir" action="exibeVenda.xhtml"/>
                 <h:commandButton value="Voltar" action="index.xhtml"/>
             </h:panelGrid>

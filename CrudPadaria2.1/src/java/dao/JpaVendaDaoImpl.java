@@ -32,6 +32,14 @@ public class JpaVendaDaoImpl extends JpaGenericDao<Venda>{
         return lista;
     }
     
+    public void removeDoEstoque(int idProduto, int qtd){
+        
+        Query query = query = em.createQuery("UPDATE Produtos p SET p.quantidade = (p.quantidade - :qtd) WHERE p.id = :idProduto");
+        query.setParameter("idProduto",idProduto);
+        query.setParameter("qtd",qtd); 
+        query.executeUpdate();
+    }
+    
     @Override
     protected EntityManager getEntityManager() {
         return em;

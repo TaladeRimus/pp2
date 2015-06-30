@@ -15,4 +15,5 @@ import java.util.List;
 public interface VendaDao extends GenericDao<Venda>  {
     
     public List<Venda> buscar(String venda);
+    public void removeDoEstoque(int idProduto, int quantidade);
 }

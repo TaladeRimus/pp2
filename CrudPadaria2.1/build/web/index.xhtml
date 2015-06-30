@@ -13,10 +13,11 @@
                 <h:outputLabel value="Senha: "/>
                 <h:inputSecret/>
             </h:panelGrid>
-            <h:panelGrid columns="3">
+            <h:panelGrid columns="4">
                 <h:commandButton value="Entrar" action="perfil.xhtml"/>
                 <h:commandButton value="Cadastrar Produto" action="#{produtoMB.prepararCadastro}" />
                 <h:commandButton value="Cadastrar Usuario" action="#{usuarioMB.prepararCadastro}" />
+                <h:commandButton value="Realizar Compra" action="#{vendaMB.prepararCadastro}" />
             </h:panelGrid>
 
         </h:form>

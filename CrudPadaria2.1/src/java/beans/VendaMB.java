@@ -47,7 +47,7 @@ public class VendaMB implements Serializable {
         return ("cadastroVenda");
     }
 
-    public String cadastrar() {
+    public String cadastrar(int quantidade) {
         try{
             vendaDao.inserir(vendaSelecionado);
             Mensagem.addMensagemSucesso("Cadastro realizado com sucesso!");
@@ -78,6 +78,21 @@ public class VendaMB implements Serializable {
         } catch (Exception e) {
             Mensagem.addMensagemErro("Erro ao remover Venda.");
         }
+    }
+    
+    public void removeDoEstoque( int idProduto, int quantidade ){
+        
+        try {
+            
+            vendaDao.removeDoEstoque(idProduto, quantidade);
+            cadastrar(quantidade);
+            Mensagem.addMensagemSucesso("Venda sucesso");
+            
+        } catch ( Exception e ) {
+            Mensagem.addMensagemErro("Erro ao remover do estoque");
+            e.printStackTrace();
+        }
+           
     }
     
 }
