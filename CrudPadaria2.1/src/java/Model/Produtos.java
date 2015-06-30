@@ -9,12 +9,14 @@ package Model;
 import java.io.Serializable;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
  * @author Guilherme
  */
 @Entity
+@XmlRootElement
 public class Produtos implements Serializable{
     public static int AUTOINCREMENT = 0;
     private String nome;

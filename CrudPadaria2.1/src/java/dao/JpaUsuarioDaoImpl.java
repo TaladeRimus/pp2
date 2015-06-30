@@ -16,7 +16,7 @@ import javax.persistence.Query;
 public class JpaUsuarioDaoImpl extends JpaGenericDao<Usuario> {
     @PersistenceContext(unitName = "PadariaPU")
     protected EntityManager em;
-      
+
     public JpaUsuarioDaoImpl() {
         super(Usuario.class);
     }
