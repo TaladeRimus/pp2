@@ -8,13 +8,13 @@
     <h:body>
         <h:form>
             <h:panelGrid columns="2" cellpadding="3">
-                <h:outputLabel value="#{usuarioMB.login} "/>
+                <h:outputLabel value="Login: "/>
                 <h:inputText/>
-                <h:outputLabel value="#{usuarioMB.senha}"/>
+                <h:outputLabel value="Senha: "/>
                 <h:inputSecret/>
             </h:panelGrid>
             <h:panelGrid columns="4">
-                <h:commandButton value="Entrar" action="#{usuarioMB.login(usuarioMB.login, usuarioMB.senha)}"/>
+                <h:commandButton value="Entrar" action="perfil.xhtml"/>
                 <h:commandButton value="Cadastrar Produto" action="#{produtoMB.prepararCadastro}" />
                 <h:commandButton value="Cadastrar Usuario" action="#{usuarioMB.prepararCadastro}" />
                 <h:commandButton value="Realizar Compra" action="#{vendaMB.prepararCadastro}" />

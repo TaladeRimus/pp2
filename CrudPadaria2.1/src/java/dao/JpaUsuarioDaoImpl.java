@@ -28,15 +28,6 @@ public class JpaUsuarioDaoImpl extends JpaGenericDao<Usuario> {
         return lista;
     }
     
-    public List<Usuario> login(String login, String senha) {
-        
-        Query query = query = em.createQuery("Select u FROM Usuario WHERE u.login = :login AND u.senha = :senha");
-        query.setParameter("login", login);
-        query.setParameter("senha", senha);
-        List<Usuario> listaLogin = query.getResultList();
-        return listaLogin;
-    }
-    
     @Override
     protected EntityManager getEntityManager() {
         return em;

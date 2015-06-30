@@ -15,6 +15,5 @@ import java.util.List;
 public interface UsuarioDao extends GenericDao<Usuario> {
     
     public List<Usuario> buscar(String nome);
-    public List<Usuario> login(String login, String senha);
     
 }

@@ -28,6 +28,12 @@ public class JpaProdutoDaoImpl extends JpaGenericDao<Produtos> {
         return lista;
     }
     
+    public List<Produtos> listarProdutos() {
+        Query query = query = em.createQuery("Select p from Produtos p");
+        List<Produtos> list = query.getResultList();
+        return list;
+    }
+    
     @Override
     protected EntityManager getEntityManager() {
         return em;

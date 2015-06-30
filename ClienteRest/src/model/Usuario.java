@@ -3,23 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Model;
-
-import java.io.Serializable;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.xml.bind.annotation.XmlRootElement;
+package model;
 
 /**
  *
- * @author Guilherme
+ * @author 631310007
  */
-@Entity
-@XmlRootElement
-public class Usuario implements Serializable {
+public class Usuario {
     public static int AUTOINCREMENT = 0;
     private String nome, login, senha;
-    @Id
     private int id;
     private int permissao;
     

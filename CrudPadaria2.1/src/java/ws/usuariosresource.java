@@ -5,59 +5,56 @@
  */
 package ws;
 
-import Model.Produtos;
-import dao.JpaProdutoDaoImpl;
+import Model.Usuario;
+import dao.JpaUsuarioDaoImpl;
 import java.util.List;
 import javax.ejb.EJB;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.UriInfo;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.Produces;
 import javax.ws.rs.GET;
-import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.PUT;
 
 /**
  * REST Web Service
  *
- * @author Adriano
+ * @author 631310007
  */
-@Path("produtos")
-public class webresource {
+@Path("usuarios")
+public class usuariosresource {
+
     @EJB
-    JpaProdutoDaoImpl cp;
+    JpaUsuarioDaoImpl us;
     
     @Context
     private UriInfo context;
-
+    
     /**
-     * Creates a new instance of webresource
+     * Creates a new instance of usuariosresource
      */
-    public webresource() {
+    public usuariosresource() {
     }
 
     /**
-     * Retrieves representation of an instance of ws.webresource
+     * Retrieves representation of an instance of ws.usuariosresource
      * @return an instance of java.lang.String
      */
     @GET
     @Produces("application/json")
-    public List<Produtos> getJson() {
-       
-       return(cp.listarProdutos());
-        
+    public List<Usuario> getJson() {
+        return us.listar();
     }
 
-    /*@PUT
+    /**
+     * PUT method for updating or creating an instance of usuariosresource
+     * @param content representation for the resource
+     * @return an HTTP response with content of the updated or created resource.
+     */
+    @PUT
     @Consumes("application/json")
     public void putJson(String content) {
-    }*/
-    @POST
-    @Consumes("application/json")
-    @Produces ("text/plain")
-    public String postJson(Produtos p) {
-        cp.inserir(p);
-        return "OK";
     }
 }
