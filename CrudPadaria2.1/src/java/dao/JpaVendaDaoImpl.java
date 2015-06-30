@@ -5,7 +5,6 @@
  */
 package dao;
 
-import Model.Produtos;
 import Model.Venda;
 import java.util.List;
 import javax.ejb.Stateless;

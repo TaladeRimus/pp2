@@ -29,15 +29,15 @@ public class ComandosVenda {
         
     }
     
-    public List<Venda> getUsuario() {
+    public List<Venda> getVenda() {
        return venda;
     }
 
-    public void setUsuario(List<Venda> venda) {
+    public void setVenda(List<Venda> venda) {
         this.venda = venda;
     }
     
-     public String adicionaUsuario() {
+     public String adicionaVenda() {
         if (editar) {
             for (Venda vend : venda) {
                 if (vend.getIdCliente() == vendaSelecionado.getIdCliente()) {
@@ -51,26 +51,26 @@ public class ComandosVenda {
         return ("exibeVendas");
     }
 
-    public void removerUsuario() {        
+    public void removerVenda() {        
         venda.remove(vendaSelecionado);
     }
 
-    public String novoUsuario() {
+    public String novaVenda() {
         this.vendaSelecionado = new Venda();
         editar = false;
         return ("cadastroVenda");
     }
 
-    public String editarUsuario() {
+    public String editarVenda() {
         editar = true;
         return ("cadastroVenda");
     }
 
-    public Venda getUsuarioSelecionado() {
+    public Venda getVendaSelecionado() {
         return vendaSelecionado;
     }
 
-    public void setUsuarioSelecionado(Venda vendaSelecionado) {
+    public void setVendaSelecionado(Venda vendaSelecionado) {
         this.vendaSelecionado = vendaSelecionado;
     }
     

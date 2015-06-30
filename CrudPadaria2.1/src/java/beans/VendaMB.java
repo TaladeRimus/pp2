@@ -30,7 +30,7 @@ public class VendaMB implements Serializable {
         vendaSelecionado = new Venda();
     }
 
-    public List<Venda> getUsuarios() {
+    public List<Venda> getVendas() {
         return (vendaDao.listar());
     }
 
