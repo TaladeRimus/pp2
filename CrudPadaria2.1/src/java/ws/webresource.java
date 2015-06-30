@@ -7,6 +7,7 @@ package ws;
 
 import Model.ComandosProdutos;
 import Model.Produtos;
+import beans.ProdutoMB;
 import java.util.List;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.UriInfo;

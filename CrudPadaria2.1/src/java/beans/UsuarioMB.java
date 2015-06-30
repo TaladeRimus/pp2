@@ -25,6 +25,9 @@ public class UsuarioMB implements Serializable{
     @EJB
     private JpaUsuarioDaoImpl usuarioDao;
     private Usuario usuarioSelecionado;
+    private List<Usuario> userLogin;
+    private String login;
+    private String senha;
 
     public UsuarioMB() {
         usuarioSelecionado = new Usuario();
@@ -79,5 +82,47 @@ public class UsuarioMB implements Serializable{
             Mensagem.addMensagemErro("Erro ao remover o Usuario.");
         }
     }
+    
+    public String login(String login, String senha){
+        
+        if((usuarioDao.login(login, senha)).isEmpty())
+        {
+            Mensagem.addMensagemErro("Login invalido");
+            return "index";
+        }
+        else
+        {
+            usuarioDao.login(login, senha);
+            return "perfil";
+        }
+        
+    }
+
+    public String getLogin() {
+        return login;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+
+    public List<Usuario> getUserLogin() {
+        return userLogin;
+    }
+
+    public void setUserLogin(List<Usuario> userLogin) {
+        this.userLogin = userLogin;
+    }
+    
+    
+    
     
 }
