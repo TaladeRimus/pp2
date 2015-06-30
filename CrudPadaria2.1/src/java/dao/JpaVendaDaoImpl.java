@@ -5,26 +5,31 @@
  */
 package dao;
 
-import Model.Usuario;
+import Model.Produtos;
+import Model.Venda;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
+/**
+ *
+ * @author Guilherme
+ */
 @Stateless
-public class JpaUsuarioDaoImpl extends JpaGenericDao<Usuario> {
+public class JpaVendaDaoImpl extends JpaGenericDao<Venda>{
     @PersistenceContext(unitName = "PadariaPU")
     protected EntityManager em;
-      
-    public JpaUsuarioDaoImpl() {
-        super(Usuario.class);
+
+    public JpaVendaDaoImpl() {
+        super(Venda.class);
     }
     
-    public List<Usuario> buscar(String nome){
-        Query query = query = em.createQuery("SELECT u FROM usuario WHERE u.nome LIKE :nome");
-        query.setParameter("nome", '%' + nome + '%');
-        List<Usuario> lista = query.getResultList();
+    public List<Venda> buscar(int idCliente){
+        Query query = query = em.createQuery("SELECT p FROM Venda p WHERE p.idCliente LIKE :idCliente");
+        query.setParameter("idCliente", '%' + idCliente + '%');
+        List<Venda> lista = query.getResultList();
         return lista;
     }
     
@@ -32,6 +37,4 @@ public class JpaUsuarioDaoImpl extends JpaGenericDao<Usuario> {
     protected EntityManager getEntityManager() {
         return em;
     }
-    
-    
 }

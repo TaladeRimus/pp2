@@ -15,11 +15,11 @@ import javax.persistence.Id;
  */
 @Entity
 public class Usuario implements Serializable {
-    
+    public static int AUTOINCREMENT = 0;
     private String nome, login, senha;
     @Id
     private int id;
-    private int AUTOINCREMENT, permissao;
+    private int permissao;
     
     public Usuario() {
         id = ++AUTOINCREMENT;

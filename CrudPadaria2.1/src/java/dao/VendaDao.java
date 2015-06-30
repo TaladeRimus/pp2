@@ -5,15 +5,14 @@
  */
 package dao;
 
-import Model.Usuario;
-import java.util.List;
 
+import Model.Venda;
+import java.util.List;
 /**
  *
- * @author 631310448
+ * @author Guilherme
  */
-public interface UsuarioDao extends GenericDao<Usuario> {
+public interface VendaDao extends GenericDao<Venda>  {
     
-    public List<Usuario> buscar(String nome);
-      
+    public List<Venda> buscar(String venda);
 }
